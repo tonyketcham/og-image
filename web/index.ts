@@ -142,16 +142,12 @@ const markdownOptions: DropdownOption[] = [
 ];
 
 const imageLightOptions: DropdownOption[] = [
-    { text: 'Vercel', value: 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg' },
-    { text: 'Next.js', value: 'https://assets.vercel.com/image/upload/front/assets/design/nextjs-black-logo.svg' },
-    { text: 'Hyper', value: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-color-logo.svg' },
+    { text: 'Puerh.wtf', value: 'https://puerh.wtf/assets/static/apple-touch-icon.7b22250.d6c38f098e4cfe7492d30929042211dd.png' },
 ];
 
 const imageDarkOptions: DropdownOption[] = [
 
-    { text: 'Vercel', value: 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-white.svg' },
-    { text: 'Next.js', value: 'https://assets.vercel.com/image/upload/front/assets/design/nextjs-white-logo.svg' },
-    { text: 'Hyper', value: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-bw-logo.svg' },
+    { text: 'Puerh.wtf', value: 'https://puerh.wtf/assets/static/apple-touch-icon.7b22250.d6c38f098e4cfe7492d30929042211dd.png' },
 ];
 
 const widthOptions = [
@@ -163,6 +159,7 @@ const widthOptions = [
     { text: '250', value: '250' },
     { text: '300', value: '300' },
     { text: '350', value: '350' },
+    { text: '500', value: '500' },
 ];
 
 const heightOptions = [
@@ -174,6 +171,7 @@ const heightOptions = [
     { text: '250', value: '250' },
     { text: '300', value: '300' },
     { text: '350', value: '350' },
+    { text: '500', value: '500' },
 ];
 
 interface AppState extends ParsedRequest {
@@ -201,11 +199,11 @@ const App = (_: any, state: AppState, setState: SetState) => {
         setState({ ...newState, loading: true });
     };
     const {
-        fileType = 'png',
+        fileType = 'jpg',
         fontSize = '100px',
         theme = 'light',
         md = true,
-        text = '**Hello** World',
+        text = '**Pu-erh, wtf?** A tea log',
         images=[imageLightOptions[0].value],
         widths=[],
         heights=[],
@@ -378,7 +376,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
                         label: `Add Image ${images.length + 1}`,
                         onclick: () => {
                             const nextImage = images.length === 1
-                                ? 'https://cdn.jsdelivr.net/gh/remojansen/logo.ts@master/ts.svg'
+                                ? 'https://res.cloudinary.com/pu-erh/image/upload/v1612895806/tea/2021/Snoozefest/63B60F99-5C28-4C00-9818-633EBA3A259D_iytjc2.jpg'
                                 : '';
                             setLoadingState({ images: [...images, nextImage] })
                         }
