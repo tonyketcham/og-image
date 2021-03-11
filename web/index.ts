@@ -203,7 +203,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
         fontSize = '100px',
         theme = 'light',
         md = true,
-        text = '**Pu-erh, wtf?** A tea log',
+        text = 'A tea log',
         images=[imageLightOptions[0].value],
         widths=[],
         heights=[],
