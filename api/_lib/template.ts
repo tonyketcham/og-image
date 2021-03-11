@@ -12,14 +12,14 @@ const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString('b
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
-    let background = 'white';
+    let background = '#FEFCE8';
     let foreground = 'black';
-    let radial = 'lightgray';
+    let radial = '#FDE047';
 
     if (theme === 'dark') {
-        background = 'black';
+        background = '#1C1917';
         foreground = 'white';
-        radial = 'dimgray';
+        radial = '#A16207';
     }
     return `
     @font-face {
@@ -54,6 +54,13 @@ function getCss(theme: string, fontSize: string) {
         justify-content: center;
     }
 
+    .lead {
+        font-family: monospace !important;
+        text-shadow: 2px 5px 1px #00000021;
+        letter-spacing: 2px;
+        padding: 3.5rem;
+    }
+
     code {
         color: #D400FF;
         font-family: 'Vera';
@@ -75,6 +82,7 @@ function getCss(theme: string, fontSize: string) {
 
     .logo {
         margin: 0 75px;
+        border-radius: 15%;
     }
 
     .plus {
@@ -116,6 +124,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <body>
         <div>
             <div class="spacer">
+            <h1 class="heading lead">Pu-erh, wtf?</h1>
             <div class="logo-wrapper">
                 ${images.map((img, i) =>
                     getPlusSign(i) + getImage(img, widths[i], heights[i])
