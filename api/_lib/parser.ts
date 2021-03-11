@@ -52,14 +52,11 @@ function getArray(stringOrArray: string[] | string | undefined): string[] {
 
 function getDefaultImages(images: string[], theme: Theme): string[] {
     const defaultImage = theme === 'light'
-        ? 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg'
-        : 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-white.svg';
+        ? 'https://puerh.wtf/assets/static/apple-touch-icon.7b22250.d6c38f098e4cfe7492d30929042211dd.png'
+        : 'https://puerh.wtf/assets/static/apple-touch-icon.7b22250.d6c38f098e4cfe7492d30929042211dd.png';
 
     if (!images || !images[0]) {
         return [defaultImage];
-    }
-    if (!images[0].startsWith('https://assets.vercel.com/') && !images[0].startsWith('https://assets.zeit.co/')) {
-        images[0] = defaultImage;
     }
     return images;
 }
